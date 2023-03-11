@@ -1,20 +1,32 @@
 // preloader
 window.addEventListener("load", () => {
+  let checkImgLoaded = document.getElementById('preloader-img');
+
   function preloader() {
     const preloader = document.querySelector('.preloader');
 
     if (!preloader) return
+
     preloader.classList.add('loaded');
 
     setTimeout(() => {
-
       preloader.remove()
     }, 990)
   }
 
-  setTimeout(() => {
-    preloader()
-  }, 1000)
+  function imgLoaded() {
+    let parentBlockImg = checkImgLoaded.closest('.preloader__image')
+
+    parentBlockImg.classList.add('loaded');
+
+    if (parentBlockImg.classList.contains('loaded')) {
+      setTimeout(() => {
+        preloader()
+      }, 4000)
+    }
+  };
+
+  imgLoaded()
 })
 
 const btnLeave = document.querySelector('.ui-btn.leave');
