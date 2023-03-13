@@ -1,8 +1,8 @@
 .ui-btn {
   display: block;
-  background-color: #298e52;
+  background-color: #fff;
   font-size: 20px;
-  color: #fff;
+  color: #000;
   border: none;
   max-width: 220px;
   width: 100%;
@@ -27,6 +27,6 @@
   }
 
   &:hover {
-    background-color: #31a35f;
+    background-color: #eeeeee;
   }
 }
